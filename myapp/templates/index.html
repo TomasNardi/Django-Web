@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Sign In</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+Iusto, voluptas architecto ut laborum ullam, hic sunt assumenda 
+laboriosam eaque aliquam ratione mollitia dolorum. Perspiciatis rem neque commodi sed, 
+eveniet nobis.</p>
+
+{% for i in info %}
+
+<div style="background-color: bisque; padding: 1em; margin: 1em;">
+<p style="font-size: large;">{{i.title}}</p>
+<p style="font-size: large;">{{i.description}}</p>
+<p style="font-size: large;">{{i.user}}</p>
+<p style="font-size: large;">{{i.done}}</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+

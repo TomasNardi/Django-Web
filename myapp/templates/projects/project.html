@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+
+{% for i in projects %}
+
+<p style="font-size: large;">{{i.name}}</p>
+
+{% endfor %}
+
+{% endblock %}

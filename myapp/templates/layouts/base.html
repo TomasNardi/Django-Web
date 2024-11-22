@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Django</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Delta Old</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about'%}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'hello' username='Usuario' %}">Hola - Usuario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'projectos' %}">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'crear_proyecto' %}">Crear Proyecto</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li  class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+</header>
+<!-- Armo el body content -->
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
